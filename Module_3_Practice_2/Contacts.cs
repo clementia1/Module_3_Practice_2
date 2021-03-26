@@ -1,83 +1,133 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Text;
 using System.Linq;
 using Module_3_Practice_2.Models;
+using Module_3_Practice_2.Helpers.Extensions;
 
 namespace Module_3_Practice_2
 {
-    public class Contacts<T>
+    public class Contacts<T> : IEnumerable<T>
         where T : Contact
     {
-        private List<Contact> _contactList;
+        private List<T> _contactList;
         private int _lastPaginationItem;
 
         public Contacts()
         {
-            _contactList = new List<Contact>();
+            _contactList = new List<T>();
         }
 
-        public List<Contact> FilterByOperator(string operatorCode)
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return _contactList.GetEnumerator();
+        }
+
+        public void Add(T contact)
+        {
+            _contactList.Add(contact);
+        }
+
+        public List<T> FilterByOperator(string operatorCode)
         {
             var result = _contactList.Where(item => item.PhoneNumber.StartsWith(operatorCode)).ToList();
             return result;
         }
 
-        public List<Contact> Next(int getItemsCount)
+        public List<T> Next(int getItemsCount)
         {
             var contactsList = GetContacts(_lastPaginationItem, getItemsCount);
             _lastPaginationItem += getItemsCount;
             return contactsList;
         }
 
-        public List<Contact> Back(int getItemsCount)
+        public List<T> Back(int getItemsCount)
         {
             _lastPaginationItem -= _lastPaginationItem < _contactList.Count ? getItemsCount : 0;
             var contactsList = GetContacts(_lastPaginationItem, getItemsCount);
             return contactsList;
         }
 
-        public List<Contact> ToStart(int getItemsCount)
+        public List<T> ToStart(int getItemsCount)
         {
             _lastPaginationItem = 0;
             var contactsList = GetContacts(_lastPaginationItem, getItemsCount);
             return contactsList;
         }
 
-        public List<Contact> ToEnd(int getItemsCount)
+        public List<T> ToEnd(int getItemsCount)
         {
             _lastPaginationItem = _contactList.Count - getItemsCount;
             var contactsList = GetContacts(_lastPaginationItem, getItemsCount);
             return contactsList;
         }
 
-        public List<Contact> GetThisMonthBirthdays()
+        public List<T> GetThisMonthBirthdays()
         {
-            var result = _contactList.Where(item => IsThisMonth(item.BirthDay)).ToList();
+            var result = _contactList.Where(item => item.BirthDay.IsCurrentMonth()).ToList();
             return result;
         }
 
-        public List<Contact> GetContacts()
+        public T GetNearestBirthday()
+        {
+            var firstBirthday = GetThisMonthBirthdays().OrderByDescending(item => item.BirthDay).FirstOrDefault();
+            return firstBirthday;
+        }
+
+        public List<T> GetContacts()
         {
             return _contactList;
         }
 
-        public List<Contact> GetContacts(int skipItemsCount, int getItemsCount)
+        public List<string> GetPhoneNumbers()
         {
-            var result = _contactList.Skip(skipItemsCount).Take(getItemsCount).ToList();
+            var result = _contactList.Select(item => item.PhoneNumber).ToList();
             return result;
         }
 
-        private bool IsThisMonth(DateTime date)
+        public List<T> SortByName(bool descending)
         {
-            if (DateTime.UtcNow.Year == date.Year && DateTime.UtcNow.Month == date.Month)
+            List<T> result;
+
+            if (descending)
             {
-                return true;
+                result = _contactList.OrderBy(item => item.FullName).ToList();
+                return result;
             }
             else
             {
-                return false;
+                result = _contactList.OrderByDescending(item => item.FullName).ToList();
+                return result;
             }
+        }
+
+        public List<T> SearchByName(string query)
+        {
+            var result = _contactList.Where(item => item.FullName.Contains(query)).ToList();
+            return result;
+        }
+
+        public List<T> SortByCallsDuration()
+        {
+            var result = _contactList.OrderBy(contact =>
+            {
+                var totalDuration = contact.Calls.Sum(call => call.Duration.TotalMilliseconds);
+                return totalDuration;
+            }).ToList();
+
+            return result;
+        }
+
+        private List<T> GetContacts(int skipItemsCount, int getItemsCount)
+        {
+            var result = _contactList.Skip(skipItemsCount).Take(getItemsCount).ToList();
+            return result;
         }
     }
 }

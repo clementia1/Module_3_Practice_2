@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "YCNeiicetrK5QN7pWwRBzh54ha1iHAUiszi6by1mC6Pdu8ayvWmcGXj4ZtEJWpJVlzvFSN0EqVh+BxqtAIdqdg==",
+  "dgSpecHash": "f//s2CRK0pjjYuxVkxLVs8Lo6FdNu3i/7S866pb61Gh2zt6MkhJNW/kdWzw2waIrk4t3FRrg2dShKaxYgFf9ug==",
   "success": true,
-  "projectFilePath": "C:\\Users\\grinin.KH\\source\\repos\\Module_3_Practice_2\\Module_3_Practice_2\\Module_3_Practice_2.csproj",
+  "projectFilePath": "C:\\Users\\user\\source\\repos\\Module_3_Practice_2\\Module_3_Practice_2\\Module_3_Practice_2.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\grinin.KH\\.nuget\\packages\\stylecop.analyzers\\1.1.118\\stylecop.analyzers.1.1.118.nupkg.sha512"
+    "C:\\Users\\user\\.nuget\\packages\\stylecop.analyzers\\1.1.118\\stylecop.analyzers.1.1.118.nupkg.sha512"
   ],
   "logs": []
 }

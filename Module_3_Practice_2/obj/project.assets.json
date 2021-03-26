@@ -40,19 +40,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\grinin.KH\\.nuget\\packages\\": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\grinin.KH\\source\\repos\\Module_3_Practice_2\\Module_3_Practice_2\\Module_3_Practice_2.csproj",
+      "projectUniqueName": "C:\\Users\\user\\source\\repos\\Module_3_Practice_2\\Module_3_Practice_2\\Module_3_Practice_2.csproj",
       "projectName": "Module_3_Practice_2",
-      "projectPath": "C:\\Users\\grinin.KH\\source\\repos\\Module_3_Practice_2\\Module_3_Practice_2\\Module_3_Practice_2.csproj",
-      "packagesPath": "C:\\Users\\grinin.KH\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\grinin.KH\\source\\repos\\Module_3_Practice_2\\Module_3_Practice_2\\obj\\",
+      "projectPath": "C:\\Users\\user\\source\\repos\\Module_3_Practice_2\\Module_3_Practice_2\\Module_3_Practice_2.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\user\\source\\repos\\Module_3_Practice_2\\Module_3_Practice_2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\grinin.KH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -98,7 +98,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }
