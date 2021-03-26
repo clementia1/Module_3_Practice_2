@@ -51,6 +51,12 @@ namespace Module_3_Practice_2
             return contactsList;
         }
 
+        public List<Contact> GetThisMonthBirthdays()
+        {
+            var result = _contactList.Where(item => IsThisMonth(item.BirthDay)).ToList();
+            return result;
+        }
+
         public List<Contact> GetContacts()
         {
             return _contactList;
@@ -60,6 +66,18 @@ namespace Module_3_Practice_2
         {
             var result = _contactList.Skip(skipItemsCount).Take(getItemsCount).ToList();
             return result;
+        }
+
+        private bool IsThisMonth(DateTime date)
+        {
+            if (DateTime.UtcNow.Year == date.Year && DateTime.UtcNow.Month == date.Month)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

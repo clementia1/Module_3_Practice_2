@@ -8,12 +8,9 @@ namespace Module_3_Practice_2
         public static void Main(string[] args)
         {
             int[] numbers = { -3, -2, -1, 0, 1, 2, 3 };
-            var result = numbers.Skip(5).Take(10);
+            var result = numbers.Where(item => item == 5).ToArray();
 
-            foreach (int i in result)
-            {
-                Console.WriteLine(i);
-            }
+            Console.WriteLine(result.Length);
         }
     }
 }
