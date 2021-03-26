@@ -1,0 +1,13 @@
+C:\Users\grinin.KH\source\repos\Module_3_Practice_2\Module_3_Practice_2\bin\Debug\netcoreapp3.1\Module_3_Practice_2.exe
+C:\Users\grinin.KH\source\repos\Module_3_Practice_2\Module_3_Practice_2\bin\Debug\netcoreapp3.1\Module_3_Practice_2.deps.json
+C:\Users\grinin.KH\source\repos\Module_3_Practice_2\Module_3_Practice_2\bin\Debug\netcoreapp3.1\Module_3_Practice_2.runtimeconfig.json
+C:\Users\grinin.KH\source\repos\Module_3_Practice_2\Module_3_Practice_2\bin\Debug\netcoreapp3.1\Module_3_Practice_2.runtimeconfig.dev.json
+C:\Users\grinin.KH\source\repos\Module_3_Practice_2\Module_3_Practice_2\bin\Debug\netcoreapp3.1\Module_3_Practice_2.dll
+C:\Users\grinin.KH\source\repos\Module_3_Practice_2\Module_3_Practice_2\bin\Debug\netcoreapp3.1\Module_3_Practice_2.pdb
+C:\Users\grinin.KH\source\repos\Module_3_Practice_2\Module_3_Practice_2\obj\Debug\netcoreapp3.1\Module_3_Practice_2.csprojAssemblyReference.cache
+C:\Users\grinin.KH\source\repos\Module_3_Practice_2\Module_3_Practice_2\obj\Debug\netcoreapp3.1\Module_3_Practice_2.AssemblyInfoInputs.cache
+C:\Users\grinin.KH\source\repos\Module_3_Practice_2\Module_3_Practice_2\obj\Debug\netcoreapp3.1\Module_3_Practice_2.AssemblyInfo.cs
+C:\Users\grinin.KH\source\repos\Module_3_Practice_2\Module_3_Practice_2\obj\Debug\netcoreapp3.1\Module_3_Practice_2.csproj.CoreCompileInputs.cache
+C:\Users\grinin.KH\source\repos\Module_3_Practice_2\Module_3_Practice_2\obj\Debug\netcoreapp3.1\Module_3_Practice_2.dll
+C:\Users\grinin.KH\source\repos\Module_3_Practice_2\Module_3_Practice_2\obj\Debug\netcoreapp3.1\Module_3_Practice_2.pdb
+C:\Users\grinin.KH\source\repos\Module_3_Practice_2\Module_3_Practice_2\obj\Debug\netcoreapp3.1\Module_3_Practice_2.genruntimeconfig.cache
