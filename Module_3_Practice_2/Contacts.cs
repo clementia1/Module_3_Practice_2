@@ -34,44 +34,44 @@ namespace Module_3_Practice_2
             _contactList.Add(contact);
         }
 
-        public List<T> FilterByOperator(string operatorCode)
+        public IReadOnlyCollection<T> FilterByOperator(string operatorCode)
         {
-            var result = _contactList.Where(item => item.PhoneNumber.StartsWith(operatorCode)).ToList();
-            return result;
+            var result = _contactList.Where(item => item.PhoneNumber.StartsWith(operatorCode));
+            return (IReadOnlyCollection<T>)result;
         }
 
-        public List<T> Next(int getItemsCount)
+        public IReadOnlyCollection<T> Next(int getItemsCount)
         {
             var contactsList = GetContacts(_lastPaginationItem, getItemsCount);
             _lastPaginationItem += getItemsCount;
             return contactsList;
         }
 
-        public List<T> Back(int getItemsCount)
+        public IReadOnlyCollection<T> Back(int getItemsCount)
         {
             _lastPaginationItem -= _lastPaginationItem < _contactList.Count ? getItemsCount : 0;
             var contactsList = GetContacts(_lastPaginationItem, getItemsCount);
             return contactsList;
         }
 
-        public List<T> ToStart(int getItemsCount)
+        public IReadOnlyCollection<T> ToStart(int getItemsCount)
         {
             _lastPaginationItem = 0;
             var contactsList = GetContacts(_lastPaginationItem, getItemsCount);
             return contactsList;
         }
 
-        public List<T> ToEnd(int getItemsCount)
+        public IReadOnlyCollection<T> ToEnd(int getItemsCount)
         {
             _lastPaginationItem = _contactList.Count - getItemsCount;
             var contactsList = GetContacts(_lastPaginationItem, getItemsCount);
             return contactsList;
         }
 
-        public List<T> GetThisMonthBirthdays()
+        public IReadOnlyCollection<T> GetThisMonthBirthdays()
         {
-            var result = _contactList.Where(item => item.BirthDay.IsCurrentMonth()).ToList();
-            return result;
+            var result = _contactList.Where(item => item.BirthDay.IsCurrentMonth());
+            return (IReadOnlyCollection<T>)result;
         }
 
         public T GetNearestBirthday()
@@ -80,54 +80,54 @@ namespace Module_3_Practice_2
             return firstBirthday;
         }
 
-        public List<T> GetContacts()
+        public IReadOnlyCollection<T> GetContacts()
         {
             return _contactList;
         }
 
-        public List<string> GetPhoneNumbers()
+        public IReadOnlyCollection<string> GetPhoneNumbers()
         {
-            var result = _contactList.Select(item => item.PhoneNumber).ToList();
-            return result;
+            var result = _contactList.Select(item => item.PhoneNumber);
+            return (IReadOnlyCollection<string>)result;
         }
 
-        public List<T> SortByName(bool descending)
+        public IReadOnlyCollection<T> SortByName(bool descending)
         {
-            List<T> result;
+            IReadOnlyCollection<T> result;
 
             if (descending)
             {
-                result = _contactList.OrderBy(item => item.FullName).ToList();
+                result = (IReadOnlyCollection<T>)_contactList.OrderBy(item => item.FullName);
                 return result;
             }
             else
             {
-                result = _contactList.OrderByDescending(item => item.FullName).ToList();
+                result = (IReadOnlyCollection<T>)_contactList.OrderByDescending(item => item.FullName);
                 return result;
             }
         }
 
-        public List<T> SearchByName(string query)
+        public IReadOnlyCollection<T> SearchByName(string query)
         {
-            var result = _contactList.Where(item => item.FullName.Contains(query)).ToList();
-            return result;
+            var result = _contactList.Where(item => item.FullName.Contains(query));
+            return (IReadOnlyCollection<T>)result;
         }
 
-        public List<T> SortByCallsDuration()
+        public IReadOnlyCollection<T> SortByCallsDuration()
         {
             var result = _contactList.OrderBy(contact =>
             {
                 var totalDuration = contact.Calls.Sum(call => call.Duration.TotalMilliseconds);
                 return totalDuration;
-            }).ToList();
+            });
 
-            return result;
+            return (IReadOnlyCollection<T>)result;
         }
 
-        private List<T> GetContacts(int skipItemsCount, int getItemsCount)
+        private IReadOnlyCollection<T> GetContacts(int skipItemsCount, int getItemsCount)
         {
-            var result = _contactList.Skip(skipItemsCount).Take(getItemsCount).ToList();
-            return result;
+            var result = _contactList.Skip(skipItemsCount).Take(getItemsCount);
+            return (IReadOnlyCollection<T>)result;
         }
     }
 }
